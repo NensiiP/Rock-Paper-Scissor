@@ -1,0 +1,234 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+    text-align: center;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    background-color: skyblue;
+}
+
+header {
+    height: 6vh;
+    color: skyblue;
+    border-radius: 0 0 3vmin 3vmin;
+    background-color: white;
+    text-shadow: 0 0 1.5rem;
+    box-shadow: 0 0 3rem rgb(4, 94, 130);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    padding: 2vmin;
+    background-color: white;
+    margin-top: 10rem;
+    border-radius: 3vmin;
+    box-shadow: 0 0 3rem rgb(4, 94, 130);
+}
+
+.score {
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 2.5vmin;
+}
+
+.playground {
+    font-size: 10vmin;
+    color: gray;
+    display: flex;
+    justify-content: space-evenly;
+    gap: 6vmin;
+    padding: 2vmin;
+}
+
+.userhand {
+    transform: rotate(90deg);
+}
+
+.computerhand {
+    transform: rotate(270deg);
+}
+
+.message {
+    background-color: black;
+    color: white;
+    padding: 0.5vmin;
+    border-radius: 3vmin;
+    font-size: 3vmin;
+    text-align: center;
+    margin: 2vmin;
+    box-shadow: 0 0.5vmin 0 0 gray;
+}
+
+.Choices {
+    font-size: 10vmin;
+    color: skyblue;
+    display: flex;
+    width: 50vmin;
+    justify-content: space-between;
+    flex-direction: row;
+    cursor: pointer;
+    gap: 2vmin;
+    padding: 3vmin;
+}
+
+@keyframes shakeUser {
+    0% {
+        transform: rotate(90deg);
+    }
+
+    20% {
+        transform: rotate(110deg);
+    }
+
+    40% {
+        transform: rotate(70deg);
+    }
+
+    60% {
+        transform: rotate(105deg);
+    }
+
+    80% {
+        transform: rotate(75deg);
+    }
+
+    100% {
+        transform: rotate(90deg);
+    }
+}
+
+.shake-user {
+    animation: shakeUser 0.6s ease;
+}
+
+@keyframes shakeComp {
+    0% {
+        transform: rotate(-90deg);
+    }
+
+    20% {
+        transform: rotate(-110deg);
+    }
+
+    40% {
+        transform: rotate(-70deg);
+    }
+
+    60% {
+        transform: rotate(-105deg);
+    }
+
+    80% {
+        transform: rotate(-75deg);
+    }
+
+    100% {
+        transform: rotate(-90deg);
+    }
+}
+
+.shake-comp {
+    animation: shakeComp 0.6s ease;
+}
+
+.icon {
+    width: 15vmin;
+    border-radius: 2vmin;
+    box-shadow: 0.5vmin 0.5vmin 0 0;
+}
+
+.icon:hover {
+    background-color: rgb(207, 223, 229);
+    transform: translateY(-5px);
+}
+
+.icon:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.5);
+}
+
+.reset {
+    font-size: 3vmin;
+    background-color: white;
+    color: skyblue;
+    margin: 5vmin;
+    width: 55vmin;
+    border: 0.2vmin solid aliceblue;
+    border-radius: 1vmin;
+    font-weight: bold;
+    padding: 0.5vmin;
+}
+
+.reset:hover {
+    background-color: rgb(207, 223, 229);
+    transform: translateY(-5px);
+}
+
+/* Confetti effect */
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: var(--win-color);
+    opacity: 0.8;
+    border-radius: 50%;
+    animation: confetti 2s ease-out forwards;
+}
+
+@keyframes confetti {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(500px) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 650px) {
+    .container {
+        width: 80vmin;
+    }
+
+    .score {
+        font-size: 3.5vmin;
+        gap: 9vmin;
+    }
+
+    .playground {
+        font-size: 15vmin;
+        gap: 9vmin;
+    }
+
+    .message {
+        font-size: 3.5vmin;
+    }
+
+    .Choices {
+        font-size: 15vmin;
+        width: 75vmin;
+        gap: 2vmin;
+        padding: 3vmin;
+    }
+
+    .icon {
+        width: 50vmin;
+    }
+
+    .reset {
+        width: 80vmin;
+        font-size: 4vmin;
+        box-shadow: 0 0 3rem rgb(4, 94, 130);
+    }
+}
